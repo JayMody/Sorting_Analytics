@@ -31,3 +31,7 @@ def selectionSort(arr):
 				idx = j
 		arr[i], arr[idx] = arr[idx], arr[i]
 	return arr
+
+### Python Sort ###
+def pythonSort(arr):
+	return list.sort(list(arr))

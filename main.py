@@ -21,7 +21,8 @@ with open('data/unique_random.csv') as f:
 algorithim_list = [
 	algorithims.bubbleSort, 
 	algorithims.insertionSort, 
-	algorithims.selectionSort
+	algorithims.selectionSort,
+	algorithims.pythonSort
 ]
 
 for algorithim in algorithim_list:

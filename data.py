@@ -18,10 +18,17 @@ def uniform_random(max_val):
 
 	return uniform_random
 
-##### Write To Text File #####
-n_samples = 100
+def reverese_order(max_val):
+	reverse_list = []
+	for i in range(1, max_val + 1):
+		reverse_list.append([j for j in range(i, 0, -1)])
+	
+	return reverse_list
 
-samplers = [unique_random, uniform_random]
+##### Write To Text File #####
+n_samples = 500
+
+samplers = [unique_random, uniform_random, reverese_order]
 for sampler in samplers:
 	stime = time.time()
 	data = sampler(n_samples)
