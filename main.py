@@ -25,9 +25,11 @@ algorithim_list = [
 	algorithims.pythonSort
 ]
 
+##### ALGORTHIM EVALUATOR #####
 for algorithim in algorithim_list:
 	sizes = [] # contains size of each array
 	times = [] # contains time taken to sort array
+
 
 	# for each of the arrays in data
 	for line in range(len(data)):
@@ -39,19 +41,25 @@ for algorithim in algorithim_list:
 		arr_sorted = algorithim(arr)
 
 		times.append(time.time() - start_time) # measures time taken to sort
+		print("[{}] ".format(algorithim.__name__), line, "/{}".format(len(data)), end = '\r') # prints the current dataset being evaluated
+
 
 	# Total time taken for an algorithim
-	print("[{}] Total time (s): ".format(algorithim.__name__), np.sum(times))
+	print("[{}]    Time (s): ".format(algorithim.__name__), np.sum(times))
+
 
 	# Plots time size relationship
 	plt.plot(sizes, times, label = algorithim.__name__)
+
 
 	##### WRITE TO FILE #####
 	with open('data/{}.csv'.format(algorithim.__name__), 'a') as f:
 		writer = csv.writer(f)
 		writer.writerows([sizes, times])
 
-# Final graph drawn and saved
+
+
+##### Final graph drawn and saved #####
 plt.legend(loc = 'upper left')
 plt.draw()
 plt.savefig('fig.png')

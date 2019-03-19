@@ -26,16 +26,19 @@ def reverese_order(max_val):
 	return reverse_list
 
 def forward_order(max_val):
-	reverse_list = []
+	forward_list = []
 	for i in range(1, max_val + 1):
-		reverse_list.append([j for j in range(1, i - 1)])
+		forward_list.append([j for j in range(1, i - 1)])
 	
-	return reverse_list
+	return forward_list
 
 ##### Write To Text File #####
-n_samples = 500
+n_samples = 1000
 
-samplers = [unique_random, uniform_random, reverese_order, forward_order]
+samplers = [unique_random, 
+			uniform_random, 
+			reverese_order, 
+			forward_order]
 for sampler in samplers:
 	stime = time.time()
 	data = sampler(n_samples)
@@ -44,4 +47,4 @@ for sampler in samplers:
 		writer = csv.writer(f)
 		writer.writerows(data)
 
-	print(time.time() - stime)
+	print("[{}]    \t".format(sampler.__name__), "Time (s): ", time.time() - stime)
