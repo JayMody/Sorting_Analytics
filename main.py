@@ -22,7 +22,8 @@ algorithim_list = [
 	algorithims.bubbleSort, 
 	algorithims.insertionSort, 
 	algorithims.selectionSort,
-	algorithims.pythonSort
+	algorithims.pythonSort,
+	algorithims.mergeSort
 ]
 
 ##### ALGORTHIM EVALUATOR #####
