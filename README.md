@@ -8,3 +8,5 @@ WIP project, the idea is simple, show how the popular basic sorting algorithims 
 Obviously, sorting algorithims have been thouroughly studied, tested, and there are countless interpretations, tests and visualizations to demonstrate how they work and perform. 
 
 This is simply my take on it. I'm doing this to gain a better insight on each sorting algorithim and to practice/familiarize myself with them.
+
+![result](/fig.png)
